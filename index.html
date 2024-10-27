@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido especial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #96287a, #e0e0e0);
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center; 
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-family: 'Sacramento', cursive;
+            font-size: 48px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 10px; /* Espaçamento entre os botões */
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .btn-sim {
+            background-color: #5f065b;
+            color: white;
+        }
+
+        .btn-nao {
+            background-color: #5f065b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ana Carolina</h1>
+        <h3>Você Aceita Namorar comigo?? ❤️</h3>
+        <button class="btn btn-sim" onclick="respostaSim()">Sim</button>
+        <button class="btn btn-nao" id="btn-nao" onmouseover="moveBotao()">Não</button>
+    </div>
+
+    <script>
+        const btnNao = document.getElementById('btn-nao');
+
+        function respostaSim() {
+            window.location.href = "https://www.youtube.com/watch?v=gUpGTRR4Tt4"; 
+        }
+
+        function respostaNao() {
+            alert("Tudo bem! Vamos ser amigos.");
+        }
+
+        function moveBotao() {
+            const x = Math.random() * (window.innerWidth - btnNao.clientWidth);
+            const y = Math.random() * (window.innerHeight - btnNao.clientHeight);
+            btnNao.style.position = 'absolute';
+            btnNao.style.left = `${x}px`;
+            btnNao.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
